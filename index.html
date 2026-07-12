@@ -1,0 +1,1178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="SADEEPA TECH - Sinhala technology videos, unboxing, tutorials, reviews, and digital learning content." />
+  <meta name="theme-color" content="#0b0b0f" />
+  <title>SADEEPA TECH | Premium Tech Channel</title>
+  <link rel="icon" type="image/png" href="sadeepa-tech-logo.png" />
+  <link rel="apple-touch-icon" href="sadeepa-tech-logo.png" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['Inter', 'Segoe UI', 'system-ui', 'sans-serif'],
+          },
+          colors: {
+            ink: '#08090d',
+            graphite: '#14161d',
+            ember: '#ff6b18',
+            amberline: '#ff9d2e',
+            platinum: '#d9dee8',
+            cyanline: '#37d5ff',
+          },
+          boxShadow: {
+            glow: '0 0 44px rgba(255, 107, 24, .28)',
+            panel: '0 22px 80px rgba(0, 0, 0, .42)',
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,700&family=Outfit:wght@700;800;900&display=swap');
+
+    :root {
+      color-scheme: dark;
+      scroll-behavior: smooth;
+      scroll-padding-top: 92px;
+    }
+
+    * {
+      scrollbar-width: thin;
+      scrollbar-color: #ff6b18 #11131a;
+    }
+
+    body {
+      min-height: 100vh;
+      overflow-x: hidden;
+      overscroll-behavior-y: contain;
+      background:
+        linear-gradient(rgba(6, 7, 10, .88), rgba(6, 7, 10, .96)),
+        radial-gradient(circle at 80% 5%,  rgba(255, 107, 24, .32), transparent 30rem),
+        radial-gradient(circle at 8%  38%, rgba(55, 213, 255, .14), transparent 26rem),
+        radial-gradient(circle at 55% 80%, rgba(140, 60, 220, .10), transparent 22rem),
+        linear-gradient(180deg, #05060a 0%, #0e1018 48%, #06070b 100%);
+      font-family: Inter, Outfit, Segoe UI, system-ui, sans-serif;
+      color: #f5f7fb;
+    }
+
+    /* Floating ambient orbs */
+    body::before, body::after {
+      content: '';
+      position: fixed;
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 0;
+      filter: blur(80px);
+      opacity: .18;
+    }
+    body::before {
+      width: 600px; height: 600px;
+      top: -120px; right: -100px;
+      background: radial-gradient(circle, rgba(255,107,24,.9), transparent 70%);
+      animation: orbFloat1 18s ease-in-out infinite;
+    }
+    body::after {
+      width: 500px; height: 500px;
+      bottom: 10%; left: -80px;
+      background: radial-gradient(circle, rgba(55,213,255,.7), transparent 70%);
+      animation: orbFloat2 22s ease-in-out infinite;
+    }
+    @keyframes orbFloat1 {
+      0%,100% { transform: translate(0,0) scale(1); }
+      33%      { transform: translate(-40px, 60px) scale(1.08); }
+      66%      { transform: translate(30px,-40px) scale(.94); }
+    }
+    @keyframes orbFloat2 {
+      0%,100% { transform: translate(0,0) scale(1); }
+      40%      { transform: translate(50px,-70px) scale(1.12); }
+      70%      { transform: translate(-30px, 40px) scale(.96); }
+    }
+
+    .metal {
+      background: linear-gradient(110deg, #f9fbff 0%, #9ea7b5 22%, #f8fafc 43%, #7f8794 67%, #ffffff 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      text-shadow: 0 18px 46px rgba(0, 0, 0, .5);
+    }
+
+    .glass {
+      position: relative;
+      background: linear-gradient(145deg, rgba(255, 255, 255, .12), rgba(255, 255, 255, .045));
+      border: 1px solid rgba(255, 255, 255, .18);
+      box-shadow: 0 22px 90px rgba(0, 0, 0, .38), inset 0 1px 0 rgba(255, 255, 255, .18);
+      backdrop-filter: blur(24px) saturate(150%);
+    }
+
+    .glass-card {
+      background: linear-gradient(145deg, rgba(255,255,255,.09), rgba(255,255,255,.028));
+      border: 1px solid rgba(255,255,255,.12);
+      box-shadow: 0 18px 70px rgba(0,0,0,.32), inset 0 1px 0 rgba(255,255,255,.13);
+      backdrop-filter: blur(22px) saturate(150%);
+      transition: border-color .3s, box-shadow .3s, transform .3s cubic-bezier(.16,1,.3,1);
+    }
+
+    .glass-card:hover {
+      border-color: rgba(255,157,46,.5);
+      box-shadow: 0 30px 100px rgba(0,0,0,.42), 0 0 44px rgba(255,107,24,.16), inset 0 1px 0 rgba(255,255,255,.2);
+      transform: translateY(-3px);
+    }
+
+    .banner-frame {
+      min-height: 11rem;
+      background: #050509;
+    }
+
+    .banner-frame img {
+      filter: saturate(1.12) contrast(1.04);
+    }
+
+    .shine {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .shine::after {
+      content: '';
+      position: absolute;
+      inset: -140% auto auto -40%;
+      width: 42%;
+      height: 300%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .24), transparent);
+      transform: rotate(28deg);
+      animation: sweep 5.8s ease-in-out infinite;
+    }
+
+    .reveal {
+      opacity: 0;
+      filter: blur(10px);
+      transform: translate3d(0, 34px, 0) scale(.985);
+      transition: opacity .95s cubic-bezier(.16, 1, .3, 1), transform .95s cubic-bezier(.16, 1, .3, 1), filter .95s cubic-bezier(.16, 1, .3, 1);
+      transition-delay: var(--reveal-delay, 0ms);
+      will-change: opacity, transform, filter;
+    }
+
+    .reveal.show {
+      opacity: 1;
+      filter: blur(0);
+      transform: translate3d(0, 0, 0) scale(1);
+    }
+
+    .loader-hidden {
+      opacity: 0;
+      pointer-events: none;
+      visibility: hidden;
+    }
+
+    .popup-hidden {
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(18px) scale(.96);
+    }
+
+    .hero-grid {
+      background-image:
+        linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+      background-size: 54px 54px;
+      mask-image: linear-gradient(180deg, rgba(0,0,0,.84), transparent 78%);
+    }
+
+    .hero-banner-bg {
+      background-image: linear-gradient(90deg, rgba(8, 9, 13, .98), rgba(8, 9, 13, .74), rgba(8, 9, 13, .96)), url('sadeepa-tech-banner.png');
+      background-position: center;
+      background-size: cover;
+      opacity: .24;
+      filter: blur(10px) saturate(1.15);
+      transform: scale(1.08);
+    }
+
+    .modal-hidden {
+      opacity: 0;
+      pointer-events: none;
+      visibility: hidden;
+    }
+
+    .video-frame {
+      aspect-ratio: 16 / 9;
+    }
+
+
+
+    /* ── Button ripple ── */
+    .btn-ripple {
+      position: relative;
+      overflow: hidden;
+    }
+    .btn-ripple::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle, rgba(255,255,255,.32) 0%, transparent 72%);
+      opacity: 0;
+      transition: opacity .4s;
+    }
+    .btn-ripple:hover::after { opacity: 1; }
+    .btn-ripple:active::after {
+      opacity: 0;
+      transition: opacity .08s;
+    }
+
+    /* ── Video card improvements ── */
+    .video-card {
+      position: relative;
+      overflow: hidden;
+      transition: transform .3s cubic-bezier(.16,1,.3,1), box-shadow .3s;
+      cursor: pointer;
+    }
+    .video-card:hover {
+      transform: translateY(-6px) scale(1.015);
+      box-shadow: 0 28px 80px rgba(0,0,0,.45), 0 0 40px rgba(255,107,24,.14);
+    }
+    .video-card .play-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background .3s;
+    }
+    .video-card:hover .play-overlay {
+      background: rgba(0,0,0,.38);
+    }
+    .video-card .play-btn {
+      width: 3.5rem;
+      height: 3.5rem;
+      border-radius: 50%;
+      background: rgba(255,107,24,.92);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transform: scale(0);
+      transition: transform .28s cubic-bezier(.34,1.56,.64,1), box-shadow .28s;
+      box-shadow: 0 0 28px rgba(255,107,24,.55);
+    }
+    .video-card:hover .play-btn {
+      transform: scale(1);
+    }
+    .video-card .card-img {
+      transition: transform .55s cubic-bezier(.16,1,.3,1), filter .55s;
+    }
+    .video-card:hover .card-img {
+      transform: scale(1.07);
+      filter: brightness(1.08) saturate(1.15);
+    }
+
+    /* ════════════════════════════════════
+       PREMIUM BUTTON SYSTEM
+       ════════════════════════════════════ */
+
+    /* -- Primary glow button -- */
+    .btn-primary {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      border-radius: .875rem;
+      padding: 1rem 2rem;
+      font-weight: 900;
+      font-size: .875rem;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      color: #fff;
+      background: linear-gradient(135deg, #ff6b18 0%, #ff9d2e 50%, #ff6b18 100%);
+      background-size: 200% 200%;
+      border: 1px solid rgba(255,157,46,.4);
+      box-shadow: 0 4px 24px rgba(255,107,24,.35), 0 1px 0 rgba(255,255,255,.15) inset;
+      transition: transform .22s cubic-bezier(.34,1.56,.64,1), box-shadow .22s, background-position .4s;
+      cursor: pointer;
+    }
+    .btn-primary::before {
+      content: '';
+      position: absolute;
+      inset: -2px;
+      border-radius: inherit;
+      background: linear-gradient(135deg, rgba(255,157,46,.7), rgba(255,107,24,.3), rgba(255,157,46,.7));
+      opacity: 0;
+      transition: opacity .3s;
+      z-index: -1;
+      filter: blur(8px);
+    }
+    .btn-primary::after {
+      content: '';
+      position: absolute;
+      inset: -100% auto auto -40%;
+      width: 35%;
+      height: 280%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,.3), transparent);
+      transform: rotate(28deg);
+      animation: btnShine 3.5s ease-in-out infinite;
+    }
+    .btn-primary:hover {
+      transform: translateY(-3px) scale(1.03);
+      box-shadow: 0 8px 40px rgba(255,107,24,.55), 0 2px 0 rgba(255,255,255,.2) inset;
+      background-position: right center;
+    }
+    .btn-primary:hover::before { opacity: 1; }
+    .btn-primary:active { transform: scale(.96); transition-duration: .1s; }
+
+    /* -- Secondary outline button -- */
+    .btn-secondary {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      border-radius: .875rem;
+      padding: 1rem 2rem;
+      font-weight: 900;
+      font-size: .875rem;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      color: #fff;
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.18);
+      box-shadow: 0 2px 16px rgba(0,0,0,.2), inset 0 1px 0 rgba(255,255,255,.1);
+      transition: border-color .25s, background .25s, transform .22s cubic-bezier(.34,1.56,.64,1), box-shadow .25s;
+      cursor: pointer;
+      backdrop-filter: blur(12px);
+    }
+    .btn-secondary::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      background: linear-gradient(135deg, rgba(255,107,24,.12), rgba(55,213,255,.06));
+      opacity: 0;
+      transition: opacity .3s;
+    }
+    .btn-secondary:hover {
+      border-color: rgba(255,107,24,.65);
+      background: rgba(255,107,24,.08);
+      box-shadow: 0 6px 32px rgba(0,0,0,.25), 0 0 24px rgba(255,107,24,.2), inset 0 1px 0 rgba(255,255,255,.15);
+      transform: translateY(-3px) scale(1.02);
+    }
+    .btn-secondary:hover::after { opacity: 1; }
+    .btn-secondary:active { transform: scale(.96); transition-duration: .1s; }
+
+    /* -- YouTube red button -- */
+    .btn-youtube {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: .5rem;
+      overflow: hidden;
+      border-radius: .875rem;
+      padding: .75rem 1.5rem;
+      font-weight: 900;
+      font-size: .875rem;
+      text-transform: uppercase;
+      letter-spacing: .09em;
+      color: #fff;
+      background: linear-gradient(135deg, #ff0000, #cc0000);
+      border: 1px solid rgba(255,100,100,.3);
+      box-shadow: 0 4px 24px rgba(255,0,0,.35), 0 1px 0 rgba(255,255,255,.12) inset;
+      transition: transform .22s cubic-bezier(.34,1.56,.64,1), box-shadow .22s;
+      animation: ytPulse 2.8s ease-in-out infinite;
+      cursor: pointer;
+    }
+    .btn-youtube:hover {
+      transform: translateY(-3px) scale(1.04);
+      box-shadow: 0 8px 36px rgba(255,0,0,.5), 0 2px 0 rgba(255,255,255,.18) inset;
+      animation: none;
+    }
+    .btn-youtube:active { transform: scale(.96); transition-duration: .1s; }
+
+    /* -- Small icon button (nav) -- */
+    .btn-nav-cta {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      border-radius: .75rem;
+      padding: .6rem 1.25rem;
+      font-weight: 900;
+      font-size: .8rem;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      color: #fff;
+      background: linear-gradient(135deg, #ff6b18, #ff9d2e);
+      border: 1px solid rgba(255,157,46,.35);
+      box-shadow: 0 3px 18px rgba(255,107,24,.4), inset 0 1px 0 rgba(255,255,255,.18);
+      transition: transform .2s cubic-bezier(.34,1.56,.64,1), box-shadow .2s;
+      cursor: pointer;
+    }
+    .btn-nav-cta::after {
+      content: '';
+      position: absolute;
+      inset: -100% auto auto -40%;
+      width: 35%;
+      height: 280%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,.28), transparent);
+      transform: rotate(28deg);
+      animation: btnShine 3s ease-in-out infinite;
+    }
+    .btn-nav-cta:hover {
+      transform: translateY(-2px) scale(1.05);
+      box-shadow: 0 6px 28px rgba(255,107,24,.55), inset 0 1px 0 rgba(255,255,255,.22);
+    }
+    .btn-nav-cta:active { transform: scale(.95); }
+
+    @keyframes btnShine {
+      0%,45% { transform: translateX(0) rotate(28deg); opacity: 0; }
+      55%     { opacity: 1; }
+      80%,100%{ transform: translateX(600%) rotate(28deg); opacity: 0; }
+    }
+
+    /* -- Legacy compatibility -- */
+    .glow-btn {
+      position: relative;
+      transition: transform .22s cubic-bezier(.34,1.56,.64,1), box-shadow .22s;
+    }
+    .glow-btn:hover {
+      transform: translateY(-3px) scale(1.03);
+      box-shadow: 0 0 32px rgba(255,107,24,.55), 0 8px 36px rgba(0,0,0,.3);
+    }
+    .glow-btn:active { transform: scale(.96); }
+    .outline-btn {
+      transition: border-color .22s, background .22s, transform .22s cubic-bezier(.34,1.56,.64,1), box-shadow .25s;
+    }
+    .outline-btn:hover {
+      transform: translateY(-3px);
+      border-color: rgba(255,107,24,.65) !important;
+      background: rgba(255,107,24,.08);
+      box-shadow: 0 6px 28px rgba(0,0,0,.22), 0 0 20px rgba(255,107,24,.15);
+    }
+    .outline-btn:active { transform: scale(.96); }
+
+    @keyframes sweep {
+      0%, 42% { transform: translateX(0) rotate(28deg); opacity: 0; }
+      52% { opacity: 1; }
+      76%, 100% { transform: translateX(520%) rotate(28deg); opacity: 0; }
+    }
+
+    @keyframes loaderBar {
+      0%   { width: 0%; }
+      15%  { width: 18%; }
+      40%  { width: 52%; }
+      70%  { width: 78%; }
+      90%  { width: 92%; }
+      100% { width: 100%; }
+    }
+
+    #loaderBarFill {
+      width: 0%;
+      animation: loaderBar 1.6s cubic-bezier(.4, 0, .2, 1) forwards;
+    }
+
+    /* YouTube Showcase */
+    .yt-showcase-card {
+      background: linear-gradient(145deg, rgba(255,255,255,.09), rgba(255,255,255,.03));
+      border: 1px solid rgba(255,255,255,.12);
+      box-shadow: 0 18px 60px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.12);
+      backdrop-filter: blur(20px) saturate(140%);
+    }
+
+    .yt-showcase-card:hover {
+      border-color: rgba(255, 0, 0, .45);
+      box-shadow: 0 24px 80px rgba(0,0,0,.42), 0 0 32px rgba(255, 0, 0, .14), inset 0 1px 0 rgba(255,255,255,.16);
+    }
+
+    .yt-red { color: #ff0000; }
+    .bg-yt-red { background: #ff0000; }
+    .bg-yt-red:hover { background: #cc0000; }
+
+    @keyframes ytPulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(255, 0, 0, .4); }
+      50%       { box-shadow: 0 0 0 14px rgba(255, 0, 0, 0); }
+    }
+
+    .yt-subscribe-btn {
+      animation: ytPulse 2.8s ease-in-out infinite;
+    }
+
+    @keyframes countUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .stat-animate {
+      animation: countUp .7s cubic-bezier(.16,1,.3,1) forwards;
+      opacity: 0;
+    }
+
+    @keyframes floatLogo {
+      0%, 100% { transform: translateY(0) rotateX(0deg); }
+      50% { transform: translateY(-14px) rotateX(4deg); }
+    }
+
+    @keyframes floatChannelCard {
+      0%, 100% { transform: translate3d(0, 0, 0) rotateX(0deg) rotateY(0deg); }
+      35% { transform: translate3d(0, -14px, 0) rotateX(1.6deg) rotateY(-1.2deg); }
+      70% { transform: translate3d(0, -6px, 0) rotateX(-1deg) rotateY(1.4deg); }
+    }
+
+    @keyframes glowBreath {
+      0%, 100% { opacity: .68; transform: scale(.99); }
+      50% { opacity: .95; transform: scale(1.04); }
+    }
+
+    @keyframes pulseRing {
+      0% { transform: scale(.9); opacity: .8; }
+      100% { transform: scale(1.55); opacity: 0; }
+    }
+
+    .float-logo {
+      animation: floatLogo 6s ease-in-out infinite;
+    }
+
+    .floating-channel-card {
+      transform-style: preserve-3d;
+      animation: floatChannelCard 7.5s cubic-bezier(.45, 0, .25, 1) infinite;
+      will-change: transform;
+    }
+
+    .floating-card-glow {
+      animation: glowBreath 5.5s ease-in-out infinite;
+    }
+
+    .pulse-ring::before,
+    .pulse-ring::after {
+      content: '';
+      position: absolute;
+      inset: -10px;
+      border: 1px solid rgba(255, 107, 24, .55);
+      border-radius: 999px;
+      animation: pulseRing 2.4s ease-out infinite;
+    }
+
+    .pulse-ring::after {
+      animation-delay: .9s;
+    }
+
+    /* ── Section glow divider ── */
+    .section-glow {
+      position: relative;
+    }
+    .section-glow::before {
+      content: '';
+      position: absolute;
+      top: -1px; left: 50%;
+      transform: translateX(-50%);
+      width: 60%; max-width: 500px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255,107,24,.6), rgba(55,213,255,.3), transparent);
+    }
+
+    /* ── Neon badge ── */
+    .neon-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: .45rem;
+      border-radius: 999px;
+      padding: .35rem 1rem;
+      font-size: .65rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .26em;
+      border: 1px solid rgba(255,107,24,.35);
+      background: rgba(255,107,24,.1);
+      color: #ff9d2e;
+      box-shadow: 0 0 18px rgba(255,107,24,.14);
+    }
+    .neon-badge-cyan {
+      border-color: rgba(55,213,255,.35);
+      background: rgba(55,213,255,.08);
+      color: #37d5ff;
+      box-shadow: 0 0 18px rgba(55,213,255,.12);
+    }
+    .neon-badge-red {
+      border-color: rgba(255,0,0,.35);
+      background: rgba(255,0,0,.1);
+      color: #ff6060;
+      box-shadow: 0 0 18px rgba(255,0,0,.12);
+    }
+
+    /* ── Gradient heading ── */
+    .grad-ember {
+      background: linear-gradient(90deg, #ff9d2e, #ff6b18);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .grad-cyan {
+      background: linear-gradient(90deg, #37d5ff, #5bdfee);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .grad-fire {
+      background: linear-gradient(90deg, #ff0000, #ff6b18, #ff9d2e);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    /* ── Nav link underline animation ── */
+    .nav-link {
+      position: relative;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 2px;
+      border-radius: 1px;
+      background: linear-gradient(90deg, #ff6b18, #ff9d2e);
+      transition: width .25s cubic-bezier(.34,1.56,.64,1);
+    }
+    .nav-link:hover::after,
+    .nav-link.active::after { width: 65%; }
+
+    /* ── Stat card ── */
+    .stat-card {
+      background: linear-gradient(145deg, rgba(255,255,255,.08), rgba(255,255,255,.02));
+      border: 1px solid rgba(255,255,255,.1);
+      border-top-color: rgba(255,107,24,.3);
+      box-shadow: 0 8px 32px rgba(0,0,0,.25), inset 0 1px 0 rgba(255,255,255,.1);
+      backdrop-filter: blur(18px);
+      border-radius: 1rem;
+      padding: 1.25rem;
+      transition: transform .28s cubic-bezier(.34,1.56,.64,1), box-shadow .28s, border-color .28s;
+    }
+    .stat-card:hover {
+      transform: translateY(-4px) scale(1.02);
+      border-color: rgba(255,107,24,.45);
+      box-shadow: 0 16px 48px rgba(0,0,0,.32), 0 0 28px rgba(255,107,24,.14);
+    }
+
+    /* ── Social card link ── */
+    .social-card {
+      position: relative;
+      overflow: hidden;
+      transition: transform .28s cubic-bezier(.34,1.56,.64,1), border-color .25s, box-shadow .25s;
+    }
+    .social-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(255,107,24,.08), rgba(55,213,255,.04));
+      opacity: 0;
+      transition: opacity .3s;
+    }
+    .social-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(255,107,24,.4) !important;
+      box-shadow: 0 14px 48px rgba(0,0,0,.35), 0 0 24px rgba(255,107,24,.1);
+    }
+    .social-card:hover::before { opacity: 1; }
+
+    @media (prefers-reduced-motion: reduce) {
+      :root { scroll-behavior: auto; }
+      body::before, body::after { animation: none; }
+      .reveal,
+      .float-logo,
+      .floating-channel-card,
+      .floating-card-glow,
+      .pulse-ring::before,
+      .pulse-ring::after,
+      .shine::after,
+      .btn-primary::after,
+      .btn-nav-cta::after {
+        animation: none !important;
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="loader" class="fixed inset-0 z-[100] grid place-items-center bg-ink transition-all duration-700">
+    <div class="text-center">
+      <div class="relative mx-auto mb-6 h-28 w-28 pulse-ring">
+        <img src="sadeepa-tech-logo.png" alt="SADEEPA TECH logo" class="relative z-10 h-full w-full rounded-full object-cover shadow-glow" />
+      </div>
+      <p class="text-sm font-semibold uppercase tracking-[.42em] text-amberline">Loading SADEEPA TECH</p>
+      <div class="mx-auto mt-5 h-1 w-64 overflow-hidden rounded-full bg-white/10">
+        <div id="loaderBarFill" class="h-full rounded-full bg-gradient-to-r from-ember via-amberline to-cyanline"></div>
+      </div>
+    </div>
+  </div>
+
+  <header class="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-ink/55 shadow-[0_18px_60px_rgba(0,0,0,.28)] backdrop-blur-2xl">
+    <nav class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
+      <a href="#home" class="flex items-center gap-3">
+        <img src="sadeepa-tech-logo.png" alt="SADEEPA TECH" class="h-11 w-11 rounded-xl object-cover ring-1 ring-white/15" />
+        <span class="text-lg font-black tracking-wide">SADEEPA <span class="text-ember">TECH</span></span>
+      </a>
+
+      <button id="menuBtn" class="rounded-lg border border-white/10 p-2 text-platinum md:hidden" aria-label="Open navigation">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-width="2" d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+
+      <div id="navLinks" class="glass-card absolute left-4 right-4 top-20 hidden rounded-2xl p-4 md:static md:flex md:items-center md:gap-2 md:border-0 md:bg-transparent md:p-0 md:shadow-none md:backdrop-blur-0">
+        <a class="nav-link block rounded-lg px-4 py-2 text-sm font-semibold text-platinum hover:bg-white/10 hover:text-white" href="#home">Home</a>
+        <a class="nav-link block rounded-lg px-4 py-2 text-sm font-semibold text-platinum hover:bg-white/10 hover:text-white" href="#about">About</a>
+        <a class="nav-link block rounded-lg px-4 py-2 text-sm font-semibold text-platinum hover:bg-white/10 hover:text-white" href="#videos">Video Gallery</a>
+        <a class="nav-link block rounded-lg px-4 py-2 text-sm font-semibold text-platinum hover:bg-white/10 hover:text-white" href="#contact">Contact</a>
+        <a class="btn-nav-cta mt-3 md:mt-0" target="_blank" rel="noopener" href="https://www.youtube.com/channel/UCpTbQ8rowBytgoF2YTvCsYQ?sub_confirmation=1">Subscribe</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="relative min-h-screen overflow-hidden pt-28">
+      <div class="hero-banner-bg absolute inset-x-0 top-0 h-[54vh]"></div>
+      <div class="hero-grid absolute inset-0"></div>
+      <div class="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-ink to-transparent"></div>
+      <div class="relative mx-auto grid max-w-7xl items-center gap-12 px-4 pb-20 pt-10 sm:px-6 lg:grid-cols-[1.08fr_.92fr] lg:px-8">
+        <div class="reveal">
+          <span class="neon-badge mb-5"><span style="width:.45rem;height:.45rem;border-radius:50%;background:#ff9d2e;display:inline-block"></span>Sinhala Tech Channel</span>
+          <h1 class="metal text-5xl font-black leading-[.95] sm:text-7xl lg:text-8xl">SADEEPA<br />TECH</h1>
+          <p class="mt-7 max-w-2xl text-lg leading-8 text-platinum">Technology tutorials, gadget unboxing, software tips, web projects, digital tools, and practical Sinhala tech content for creators, students, and everyday users.</p>
+          <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+            <a href="https://www.youtube.com/channel/UCpTbQ8rowBytgoF2YTvCsYQ?sub_confirmation=1" target="_blank" rel="noopener" class="btn-primary">Visit & Subscribe</a>
+            <a href="#videos" class="btn-secondary">Watch Latest Videos</a>
+          </div>
+
+          <div class="mt-9 grid gap-4 sm:grid-cols-3">
+            <div class="stat-card">
+              <p class="text-3xl font-black text-white grad-ember" style="background:linear-gradient(90deg,#ff9d2e,#ff6b18);-webkit-background-clip:text;background-clip:text;color:transparent">Live</p>
+              <p class="mt-1 text-sm text-platinum">Subscriber count</p>
+            </div>
+            <div class="stat-card">
+              <p class="text-3xl font-black" style="background:linear-gradient(90deg,#37d5ff,#5bdfee);-webkit-background-clip:text;background-clip:text;color:transparent">4+</p>
+              <p class="mt-1 text-sm text-platinum">Content categories</p>
+            </div>
+            <div class="stat-card">
+              <p class="text-3xl font-black" style="background:linear-gradient(90deg,#a78bfa,#7c3aed);-webkit-background-clip:text;background-clip:text;color:transparent">24/7</p>
+              <p class="mt-1 text-sm text-platinum">Channel access</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal">
+          <div class="relative mx-auto max-w-lg">
+            <div class="floating-card-glow absolute -inset-3 rounded-[2rem] bg-gradient-to-br from-ember/40 via-white/5 to-cyanline/20 blur-2xl"></div>
+            <div class="glass floating-channel-card relative overflow-hidden rounded-[2rem] p-3">
+              <div class="banner-frame overflow-hidden rounded-[1.55rem] border border-white/10">
+                <img src="sadeepa-tech-banner.png" alt="SADEEPA TECH channel banner" class="h-full min-h-44 w-full object-cover" loading="eager" />
+              </div>
+              <div class="-mt-11 px-4 pb-3 text-center">
+                <img src="sadeepa-tech-logo.png" alt="SADEEPA TECH channel logo" class="float-logo relative z-10 mx-auto h-24 w-24 rounded-full border-4 border-graphite object-cover shadow-glow" loading="eager" />
+                <p class="mt-4 text-xl font-black tracking-wide text-white">SADEEPA TECH</p>
+                <p class="mt-1 text-xs font-bold uppercase tracking-[.24em] text-amberline">Tech Reviews, Unboxing and More</p>
+              </div>
+              <div class="glass-card mx-2 mb-2 rounded-2xl p-4">
+                <div class="mb-3 flex items-center justify-between gap-3 text-left">
+                  <div>
+                    <p class="text-xs font-bold uppercase tracking-[.2em] text-amberline">Live Subscribe Count</p>
+                    <p class="text-sm text-platinum">Smooth channel analytics preview</p>
+                  </div>
+                  <span class="h-3 w-3 rounded-full bg-cyanline shadow-[0_0_18px_rgba(55,213,255,.8)]"></span>
+                </div>
+                <iframe class="h-32 w-full rounded-xl bg-black/70" title="SADEEPA TECH live subscriber count" loading="lazy" src="https://socialcounts.org/youtube-live-subscriber-count/UCpTbQ8rowBytgoF2YTvCsYQ/embed"></iframe>
+              </div>
+              <div class="glass-card mx-2 mb-2 rounded-2xl p-4">
+                <div class="mb-4 flex items-center gap-3">
+                  <img src="sadeepa-tech-logo.png" alt="SADEEPA TECH subscribe widget logo" class="h-12 w-12 rounded-xl object-cover ring-1 ring-white/15" loading="lazy" />
+                  <div class="text-left">
+                    <p class="text-sm font-black text-white">SADEEPA TECH</p>
+                    <p class="text-xs font-bold uppercase tracking-[.18em] text-amberline">Official Channel</p>
+                  </div>
+                </div>
+                <div class="rounded-xl border border-white/10 bg-black/25 p-3">
+                  <div class="g-ytsubscribe" data-channelid="UCpTbQ8rowBytgoF2YTvCsYQ" data-layout="full" data-count="default"></div>
+                </div>
+                <div class="mt-4 grid grid-cols-2 gap-3">
+                  <a href="https://www.youtube.com/@sadeepatech" target="_blank" rel="noopener"
+                     class="outline-btn rounded-xl border border-white/18 px-4 py-3 text-center text-xs font-black uppercase tracking-wide text-white">Visit Channel</a>
+                  <a href="https://www.youtube.com/channel/UCpTbQ8rowBytgoF2YTvCsYQ?sub_confirmation=1" target="_blank" rel="noopener"
+                     class="btn-youtube text-xs py-3 px-4">Subscribe</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="relative py-24">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="grid gap-10 lg:grid-cols-[.9fr_1.1fr]">
+          <div class="reveal">
+            <span class="neon-badge mb-4"><span style="width:.4rem;height:.4rem;border-radius:50%;background:#ff9d2e;display:inline-block"></span>About Channel</span>
+            <h2 class="mt-4 text-4xl font-black tracking-tight text-white sm:text-5xl">Tech knowledge, explained clearly in Sinhala.</h2>
+          </div>
+          <div class="reveal text-platinum">
+            <p class="text-lg leading-8">SADEEPA TECH is built for people who want useful technology content without confusion. The channel shares practical videos about mobile and computer tips, apps, websites, AI tools, product unboxing, setup guides, and creator-focused digital skills.</p>
+            <div class="mt-8 grid gap-4 sm:grid-cols-2">
+              <div class="glass-card rounded-2xl p-5">
+                <h3 class="text-lg font-black text-white">What viewers get</h3>
+                <p class="mt-2 text-sm leading-6">Step-by-step tutorials, honest product details, useful tools, and fast explanations that are easy to follow.</p>
+              </div>
+              <div class="glass-card rounded-2xl p-5">
+                <h3 class="text-lg font-black text-white">Channel focus</h3>
+                <p class="mt-2 text-sm leading-6">Tech videos, unboxing, web design, software help, online earning ideas, updates, and more.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-20">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="reveal mb-10 flex flex-col justify-between gap-5 md:flex-row md:items-end">
+          <div>
+            <p class="text-sm font-black uppercase tracking-[.28em] text-amberline">Video Categories</p>
+            <h2 class="mt-4 text-4xl font-black text-white">Explore by topic</h2>
+          </div>
+          <a href="https://www.youtube.com/@sadeepatech/playlists" target="_blank" rel="noopener" class="rounded-xl border border-white/15 px-5 py-3 text-sm font-bold text-white transition hover:border-ember hover:bg-ember/10">Open all playlists</a>
+        </div>
+
+        <div class="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+          <a class="glass-card reveal group overflow-hidden rounded-2xl transition hover:-translate-y-2" href="https://www.youtube.com/results?search_query=SADEEPA+TECH+tech+videos" target="_blank" rel="noopener">
+            <img class="h-44 w-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=900&q=75" alt="Circuit board technology" />
+            <div class="p-5">
+              <h3 class="text-xl font-black text-white">Tech Videos</h3>
+              <p class="mt-2 text-sm leading-6 text-platinum">Useful tutorials, app guides, device tips, online tools, and Sinhala tech explainers.</p>
+            </div>
+          </a>
+
+          <a class="glass-card reveal group overflow-hidden rounded-2xl transition hover:-translate-y-2" href="https://www.youtube.com/results?search_query=SADEEPA+TECH+unboxing" target="_blank" rel="noopener">
+            <img class="h-44 w-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" src="https://images.unsplash.com/photo-1550009158-9ebf69173e03?auto=format&fit=crop&w=900&q=75" alt="Tech gadget unboxing" />
+            <div class="p-5">
+              <h3 class="text-xl font-black text-white">Unboxing</h3>
+              <p class="mt-2 text-sm leading-6 text-platinum">Device first looks, accessories, setup impressions, and buying-help content.</p>
+            </div>
+          </a>
+
+          <a class="glass-card reveal group overflow-hidden rounded-2xl transition hover:-translate-y-2" href="https://www.youtube.com/results?search_query=SADEEPA+TECH+web+design" target="_blank" rel="noopener">
+            <img class="h-44 w-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=900&q=75" alt="Code editor on a laptop" />
+            <div class="p-5">
+              <h3 class="text-xl font-black text-white">Web & Coding</h3>
+              <p class="mt-2 text-sm leading-6 text-platinum">HTML, CSS, JavaScript, websites, projects, and creator-friendly coding content.</p>
+            </div>
+          </a>
+
+          <a class="glass-card reveal group overflow-hidden rounded-2xl transition hover:-translate-y-2" href="https://www.youtube.com/results?search_query=SADEEPA+TECH+AI+tools+software" target="_blank" rel="noopener">
+            <img class="h-44 w-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=900&q=75" alt="AI technology visualization" />
+            <div class="p-5">
+              <h3 class="text-xl font-black text-white">More Tech</h3>
+              <p class="mt-2 text-sm leading-6 text-platinum">AI tools, software updates, creator workflows, and new digital ideas.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="videos" class="py-24">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="reveal mb-10">
+          <p class="text-sm font-black uppercase tracking-[.28em] text-amberline">Video Gallery</p>
+          <h2 class="mt-4 text-4xl font-black text-white sm:text-5xl">Latest from the channel</h2>
+          <p class="mt-4 max-w-3xl text-platinum">Fresh videos load dynamically when available. Click a video to watch it inside this website without leaving the page.</p>
+        </div>
+
+
+
+        <!-- Video Grid -->
+        <div id="videoGrid" class="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+          <!-- shimmer skeleton -->
+          <div class="glass-card rounded-2xl overflow-hidden animate-pulse">
+            <div class="h-44 bg-white/5"></div>
+            <div class="p-5 space-y-3"><div class="h-3 bg-white/8 rounded w-1/3"></div><div class="h-5 bg-white/8 rounded w-full"></div></div>
+          </div>
+          <div class="glass-card rounded-2xl overflow-hidden animate-pulse">
+            <div class="h-44 bg-white/5"></div>
+            <div class="p-5 space-y-3"><div class="h-3 bg-white/8 rounded w-1/3"></div><div class="h-5 bg-white/8 rounded w-full"></div></div>
+          </div>
+          <div class="glass-card rounded-2xl overflow-hidden animate-pulse">
+            <div class="h-44 bg-white/5"></div>
+            <div class="p-5 space-y-3"><div class="h-3 bg-white/8 rounded w-1/3"></div><div class="h-5 bg-white/8 rounded w-full"></div></div>
+          </div>
+        </div>
+
+        <div class="reveal mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+          <button id="watchMoreBtn" class="btn-ripple outline-btn rounded-xl border border-white/15 px-7 py-4 text-sm font-black uppercase tracking-wide text-white">Watch More Videos</button>
+          <a href="https://www.youtube.com/@sadeepatech/videos" target="_blank" rel="noopener"
+             class="btn-ripple glow-btn shine rounded-xl bg-gradient-to-r from-ember to-amberline px-7 py-4 text-sm font-black uppercase tracking-wide text-white shadow-glow">Open Full Channel</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="py-24">
+      <div class="mx-auto grid max-w-7xl gap-8 px-4 sm:px-6 lg:grid-cols-[.95fr_1.05fr] lg:px-8">
+        <div class="reveal">
+          <p class="text-sm font-black uppercase tracking-[.28em] text-amberline">Contact</p>
+          <h2 class="mt-4 text-4xl font-black text-white sm:text-5xl">Connect with SADEEPA TECH</h2>
+          <p class="mt-5 text-lg leading-8 text-platinum">Visit the channel, follow social platforms, send project ideas, or contact directly through email.</p>
+          <div class="glass-card mt-8 rounded-2xl p-5">
+            <div class="flex items-center gap-4">
+              <img src="sadeepa-tech-logo.png" alt="SADEEPA TECH channel widget logo" class="h-16 w-16 rounded-2xl object-cover ring-1 ring-white/15" loading="lazy" />
+              <div>
+                <p class="text-xl font-black text-white">SADEEPA TECH</p>
+                <p class="mt-1 text-sm text-platinum">Visit, watch, and subscribe from this widget.</p>
+              </div>
+            </div>
+            <div class="mt-5 flex items-center gap-3 rounded-2xl border border-white/10 bg-black/25 p-3">
+              <div class="relative shrink-0">
+                <img src="sadeepa-tech-logo.png" alt="SADEEPA TECH" class="h-12 w-12 rounded-xl object-cover" loading="lazy" />
+                <span class="absolute -bottom-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full" style="background:#ff0000">
+                  <svg viewBox="0 0 24 24" class="h-2 w-2" fill="white"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                </span>
+              </div>
+              <div>
+                <p class="text-sm font-black text-white">SADEEPA TECH</p>
+                <p class="text-xs" style="color:rgba(255,80,80,.85)">@sadeepatech · YouTube</p>
+              </div>
+            </div>
+            <div class="mt-5 grid gap-3 sm:grid-cols-2">
+              <a href="https://www.youtube.com/@sadeepatech" target="_blank" rel="noopener"
+                 class="btn-ripple outline-btn rounded-xl border border-white/15 px-5 py-3 text-center text-sm font-black uppercase tracking-wide text-white">Visit Channel</a>
+              <a href="https://www.youtube.com/channel/UCpTbQ8rowBytgoF2YTvCsYQ?sub_confirmation=1" target="_blank" rel="noopener"
+                 class="btn-ripple glow-btn rounded-xl px-5 py-3 text-center text-sm font-black uppercase tracking-wide text-white"
+                 style="background:linear-gradient(90deg,#ff0000,#ff6b18)">Subscribe Now</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal grid gap-4 sm:grid-cols-2">
+          <a class="glass-card rounded-2xl p-5 transition" href="https://www.youtube.com/channel/UCpTbQ8rowBytgoF2YTvCsYQ" target="_blank" rel="noopener"><span class="text-sm font-bold text-amberline">YouTube</span><p class="mt-2 font-black text-white">Subscribe & watch</p></a>
+          <a class="glass-card rounded-2xl p-5 transition" href="https://github.com/sadeepas" target="_blank" rel="noopener"><span class="text-sm font-bold text-amberline">GitHub</span><p class="mt-2 font-black text-white">View code projects</p></a>
+          <a class="glass-card rounded-2xl p-5 transition" href="https://whatsapp.com/channel/0029VbD0ZsEA2pLKPEYSQd2w" target="_blank" rel="noopener"><span class="text-sm font-bold text-amberline">WhatsApp</span><p class="mt-2 font-black text-white">Join channel</p></a>
+          <a class="glass-card rounded-2xl p-5 transition" href="https://t.me/SADEEPA_TECH" target="_blank" rel="noopener"><span class="text-sm font-bold text-amberline">Telegram</span><p class="mt-2 font-black text-white">Message updates</p></a>
+          <a class="glass-card rounded-2xl p-5 transition" href="https://www.linkedin.com/in/sadeepa-lakshan/" target="_blank" rel="noopener"><span class="text-sm font-bold text-amberline">LinkedIn</span><p class="mt-2 font-black text-white">Professional profile</p></a>
+          <a class="glass-card rounded-2xl p-5 transition" href="mailto:sadeepapemasiri2@gmail.com"><span class="text-sm font-bold text-amberline">Email</span><p class="mt-2 break-words font-black text-white">sadeepapemasiri2@gmail.com</p></a>
+          <a class="glass-card rounded-2xl p-5 transition sm:col-span-2" href="https://sadeepatech.blogspot.com/" target="_blank" rel="noopener"><span class="text-sm font-bold text-amberline">Blog</span><p class="mt-2 font-black text-white">Read SADEEPA TECH articles</p></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+
+
+  <footer class="border-t border-white/10 bg-black/25 backdrop-blur-2xl">
+    <div class="mx-auto grid max-w-7xl gap-8 px-4 py-10 sm:px-6 md:grid-cols-[1fr_auto_auto] xl:grid-cols-[1fr_auto_auto_280px] lg:px-8">
+      <div>
+        <div class="flex items-center gap-3">
+          <img src="sadeepa-tech-logo.png" alt="SADEEPA TECH footer logo" class="h-12 w-12 rounded-xl object-cover" loading="lazy" />
+          <p class="text-lg font-black">SADEEPA <span class="text-ember">TECH</span></p>
+        </div>
+        <p class="mt-4 max-w-md text-sm leading-6 text-platinum">Modern Sinhala technology content, unboxing, tutorials, software tips, web projects, and digital learning.</p>
+      </div>
+
+      <div>
+        <h3 class="mb-4 text-sm font-black uppercase tracking-[.2em] text-amberline">Shortcuts</h3>
+        <div class="grid gap-2 text-sm text-platinum">
+          <a href="#home" class="hover:text-white">Home</a>
+          <a href="#about" class="hover:text-white">About</a>
+          <a href="#videos" class="hover:text-white">Video Gallery</a>
+          <a href="#contact" class="hover:text-white">Contact</a>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="mb-4 text-sm font-black uppercase tracking-[.2em] text-amberline">Social</h3>
+        <div class="grid gap-2 text-sm text-platinum">
+          <a href="https://github.com/sadeepas" target="_blank" rel="noopener" class="hover:text-white">GitHub</a>
+          <a href="https://whatsapp.com/channel/0029VbD0ZsEA2pLKPEYSQd2w" target="_blank" rel="noopener" class="hover:text-white">WhatsApp</a>
+          <a href="https://t.me/SADEEPA_TECH" target="_blank" rel="noopener" class="hover:text-white">Telegram</a>
+          <a href="https://www.linkedin.com/in/sadeepa-lakshan/" target="_blank" rel="noopener" class="hover:text-white">LinkedIn</a>
+          <a href="https://sadeepatech.blogspot.com/" target="_blank" rel="noopener" class="hover:text-white">Blog</a>
+        </div>
+      </div>
+
+      <!-- Footer YouTube Widget (Custom) -->
+      <div class="glass-card rounded-2xl p-4 flex flex-col justify-center" style="min-width:0">
+        <h3 class="mb-3 text-sm font-black uppercase tracking-[.2em]" style="color:#ff0000">YouTube</h3>
+        <div class="flex items-center gap-3">
+          <div class="relative shrink-0">
+            <img src="sadeepa-tech-logo.png" alt="SADEEPA TECH" class="h-12 w-12 rounded-xl object-cover" loading="lazy" />
+            <span class="absolute -bottom-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full" style="background:#ff0000">
+              <svg viewBox="0 0 24 24" class="h-2 w-2" fill="white"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </span>
+          </div>
+          <div style="min-width:0">
+            <p class="text-sm font-black text-white truncate">SADEEPA TECH</p>
+            <p class="text-xs truncate" style="color:rgba(255,0,0,.8)">@sadeepatech</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="border-t border-white/10 px-4 py-5 text-center text-sm text-platinum">Copyright &copy; <span id="year"></span> SADEEPA TECH. All rights reserved.</div>
+  </footer>
+
+  <div id="popup" class="glass popup-hidden fixed bottom-5 right-5 z-50 w-[calc(100%-2.5rem)] max-w-sm rounded-2xl p-5 transition-all duration-500">
+    <button id="popupClose" class="absolute right-3 top-3 rounded-lg p-2 text-platinum hover:bg-white/10" aria-label="Close popup">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-width="2" d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <div class="pr-8">
+      <p class="text-xs font-black uppercase tracking-[.22em] text-amberline">New here?</p>
+      <h3 class="mt-2 text-xl font-black text-white">Visit the channel and subscribe</h3>
+      <p class="mt-2 text-sm leading-6 text-platinum">Get the latest Sinhala tech videos directly from SADEEPA TECH.</p>
+      <a class="mt-4 inline-flex rounded-xl bg-ember px-5 py-3 text-sm font-black text-white shadow-glow hover:bg-amberline" href="https://www.youtube.com/channel/UCpTbQ8rowBytgoF2YTvCsYQ?sub_confirmation=1" target="_blank" rel="noopener">Open YouTube</a>
+    </div>
+  </div>
+
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <script>
+    const channelId = 'UCpTbQ8rowBytgoF2YTvCsYQ';
+    const channelUrl = 'https://www.youtube.com/channel/' + channelId;
+    const fallbackVideos = [
+      { title: 'SADEEPA TECH Latest Uploads', link: channelUrl + '/videos', thumbnail: 'sadeepa-tech-logo.png', date: 'Latest videos', id: '' },
+      { title: 'Tech Tutorials and Sinhala Guides', link: 'https://www.youtube.com/@sadeepatech/videos', thumbnail: 'sadeepa-tech-logo.png', date: 'Watch on YouTube', id: '' },
+      { title: 'Unboxing, Reviews and More', link: 'https://www.youtube.com/@sadeepatech/playlists', thumbnail: 'sadeepa-tech-logo.png', date: 'Open playlists', id: '' },
+    ];
+    let loadedVideos = [];
+    let visibleVideoCount = 6;
+
+    const loader = document.getElementById('loader');
+    const navLinks = document.getElementById('navLinks');
+    const menuBtn = document.getElementById('menuBtn');
+    const popup = document.getElementById('popup');
+    const watchMoreBtn = document.getElementById('watchMoreBtn');
+
+    window.addEventListener('load', () => {
+      // Hide loader after bar animation completes (1.6s bar + 200ms buffer)
+      setTimeout(() => loader.classList.add('loader-hidden'), 1800);
+      setTimeout(() => popup.classList.remove('popup-hidden'), 2800);
+    });
+
+    menuBtn.addEventListener('click', () => navLinks.classList.toggle('hidden'));
+    document.querySelectorAll('.nav-link').forEach((link) => {
+      link.addEventListener('click', (event) => {
+        const target = document.querySelector(link.getAttribute('href'));
+        if (target) {
+          event.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          history.pushState(null, '', link.getAttribute('href'));
+        }
+        navLinks.classList.add('hidden');
+      });
+    });
+    document.getElementById('popupClose').addEventListener('click', () => popup.classList.add('popup-hidden'));
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    document.querySelectorAll('a[href^="#"]:not(.nav-link)').forEach((link) => {
+      link.addEventListener('click', (event) => {
+        const target = document.querySelector(link.getAttribute('href'));
+        if (!target) return;
+        event.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        history.pushState(null, '', link.getAttribute('href'));
+      });
+    });
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+
+    document.querySelectorAll('.reveal').forEach((item, index) => {
+      item.style.setProperty('--reveal-delay', `${Math.min(index % 6, 5) * 70}ms`);
+      revealObserver.observe(item);
+    });
+
+    watchMoreBtn.addEventListener('click', () => {
+      visibleVideoCount += 6;
+      renderVideos(loadedVideos);
+    });
+
+    function renderVideos(videos) {
+      loadedVideos = videos;
+      const grid = document.getElementById('videoGrid');
+      grid.innerHTML = videos.slice(0, visibleVideoCount).map((video, index) => `
+        <button class="video-card glass-card reveal show rounded-2xl text-left" type="button" data-video-index="${index}">
+          <div class="relative overflow-hidden rounded-t-2xl" style="aspect-ratio:16/9;background:#000">
+            <img class="card-img h-full w-full object-cover" src="${video.thumbnail}" alt="${escapeHtml(video.title)}" loading="lazy" onerror="this.src='sadeepa-tech-logo.png'" />
+            <div class="play-overlay">
+              <div class="play-btn">
+                <svg viewBox="0 0 24 24" style="width:1.3rem;height:1.3rem;margin-left:.18rem" fill="white"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+            </div>
+            <span class="absolute bottom-3 left-3 rounded-lg px-2.5 py-1 text-[10px] font-black uppercase tracking-wide text-white" style="background:rgba(0,0,0,.72)">${video.date || 'YouTube'}</span>
+            ${video.id ? '<span class="absolute top-3 right-3 rounded-lg px-2 py-0.5 text-[10px] font-black uppercase tracking-wide text-white" style="background:rgba(255,107,24,.88)">&#9658; Play</span>' : ''}
+          </div>
+          <div class="p-4">
+            <h3 class="line-clamp-2 text-sm font-black leading-snug text-white">${escapeHtml(video.title)}</h3>
+          </div>
+        </button>
+      `).join('');
+
+      grid.querySelectorAll('[data-video-index]').forEach((card) => {
+        card.addEventListener('click', () => playVideo(loadedVideos[Number(card.dataset.videoIndex)]));
+      });
+
+      watchMoreBtn.classList.toggle('hidden', visibleVideoCount >= videos.length);
+    }
+
+    function playVideo(video, scrollToPlayer = true) {
+      if (!video || !video.id) {
+        // No embeddable video — open channel in new tab
+        window.open(video ? video.link : 'https://www.youtube.com/@sadeepatech', '_blank');
+        return;
+      }
+      window.open('https://www.youtube.com/watch?v=' + video.id, '_blank');
+    }
+
+    function getVideoId(item) {
+      const guidId = String(item.guid || '').replace('yt:video:', '');
+      if (guidId && /^[a-zA-Z0-9_-]{8,}$/.test(guidId)) return guidId;
+      try {
+        return new URL(item.link).searchParams.get('v') || '';
+      } catch (error) {
+        return '';
+      }
+    }
+
+    function escapeHtml(value) {
+      return String(value).replace(/[&<>"']/g, (char) => ({
+        '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;'
+      }[char]));
+    }
+
+    async function loadLatestVideos() {
+      const feed = encodeURIComponent('https://www.youtube.com/feeds/videos.xml?channel_id=' + channelId);
+      const api = 'https://api.rss2json.com/v1/api.json?rss_url=' + feed;
+      try {
+        const response = await fetch(api, { cache: 'no-store' });
+        if (!response.ok) throw new Error('Feed request failed');
+        const data = await response.json();
+        const videos = (data.items || []).map((item) => {
+          const id = getVideoId(item);
+          return {
+            title: item.title,
+            link: item.link,
+            id,
+            thumbnail: id ? 'https://i.ytimg.com/vi/' + id + '/hqdefault.jpg' : 'sadeepa-tech-logo.png',
+            date: item.pubDate ? new Date(item.pubDate).toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' }) : 'Latest',
+          };
+        });
+        renderVideos(videos.length ? videos : fallbackVideos);
+      } catch (error) {
+        renderVideos(fallbackVideos);
+      }
+    }
+
+    loadLatestVideos();
+
+
+  </script>
+</body>
+</html>
